@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #embedVanilla iframe {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Advanced Embed Header</h1>
+    <div id="embedVanilla"></div>
+    <script src="https://dev.vanilla.localhost/js/easyXDM/easyXDM.min.js"></script>
+    <script src="https://dev.vanilla.localhost/js/vanilla.embed.js"></script>
+    <script>
+        function notifyLocation(path) {
+            console.log("User navigated to new path: ", path)
+        }
+
+        var embed = new Vanilla.embed({
+            root: "https://dev.vanilla.localhost",
+            container: "embedVanilla",
+            onReady: function() {
+                console.log("IFrame ready!");
+                embed.setLocation("/categories");
+            },
+            notifyLocation: notifyLocation,
+        });
+    </script>
+</body>
+
+</html>
