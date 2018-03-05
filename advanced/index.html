@@ -12,12 +12,29 @@
         #embedVanilla iframe {
             width: 100%;
         }
+
+        header {
+            padding: 24px;
+        }
+
+        code {
+            background: #111;
+            color: white;
+            padding: 9px 12px;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Advanced Embed Header</h1>
-    <div id="embedVanilla"></div>
+    <header>
+        <h1>Advanced Embed Header</h1>
+        <p>If the embedded frame does not load properly be sure to set the configuration setting
+
+            <pre><code>$Configuration['Garden']['Embed']['Allow'] = 2;</code></pre>
+        </p>
+    </header>
+    <div id="embedVanilla">
+    </div>
     <script src="https://dev.vanilla.localhost/js/easyXDM/easyXDM.min.js"></script>
     <script src="https://dev.vanilla.localhost/js/vanilla.embed.js"></script>
     <script>

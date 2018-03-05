@@ -12,11 +12,27 @@
         #embedVanilla iframe {
             width: 100%;
         }
+
+        header {
+            padding: 24px;
+        }
+
+        code {
+            background: #111;
+            color: white;
+            padding: 9px 12px;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Embed Header</h1>
+    <header>
+        <h1>Embed Header</h1>
+        <p>If the embedded frame does not load properly be sure to set the configuration setting
+
+            <pre><code>$Configuration['Garden']['Embed']['Allow'] = true;</code></pre>
+        </p>
+    </header>
     <div id="embedVanilla">
         <script type="text/javascript" src="https://dev.vanilla.localhost/js/embed.js"></script>
         <noscript>

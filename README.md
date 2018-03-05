@@ -13,6 +13,8 @@ You will need a functioning Vanilla Docker setup with your main site exposed at 
 - `embed.vanilla.localhost`
 - `advanced-embed.vanilla.localhost`
 
+### Config settings
+
 Additionally for the normal embed you will need to set the config setting `Garden.Embed.Allow` to `true`. For the Advanced embed you will need to set `Garden.Embed.Allow` to `2`.
 
 ## Customizing one of the embeds
