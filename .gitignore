@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+.project
+.settings
+.buildpath
+.idea
+simple/*
+advanced/*
+!simple/index.html
+!advanced/index.html
