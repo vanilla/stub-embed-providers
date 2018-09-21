@@ -12,6 +12,7 @@ You will need a functioning Vanilla Docker setup with your main site exposed at 
 
 - `embed.vanilla.localhost`
 - `advanced-embed.vanilla.localhost`
+- `comments-embed.vanilla.localhost`
 
 ### Config settings
 
