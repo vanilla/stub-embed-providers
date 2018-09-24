@@ -1,4 +1,4 @@
-# stub-sso-providers
+# stub-embed-providers
 
 **Fair warning that nothing in this repository is considered SECURE nor STABLE enough for production use.**
 
