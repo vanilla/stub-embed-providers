@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <title>Embed Comments</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #embedVanilla iframe {
+            width: 100%;
+        }
+
+        header {
+            padding: 10px 24px;
+            background-color: #ccc;
+            border-bottom: solid 4px #aaa;
+            color: white;
+            overflow: hidden;
+        }
+        header h1 {
+            font-size: 50px;
+            line-height: 50px;
+            margin: 0;
+        }
+        code {
+            background: #111;
+            color: white;
+            padding: 9px 12px;
+        }
+        .content {
+            margin: 20px 20% 20px 20%;
+            font-size: 16px;
+        }
+        .comment-count-link {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Embed Comments</h1>
+        <pre><code>$Configuration['Garden']['Embed']['Allow'] = true;</code></pre>
+    </header>
+    <div class="content">
+        <h2>This is a blog post!</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius condimentum mi sed accumsan. Aenean mollis dictum blandit. Nam convallis tellus eros, id ornare ante sagittis ut. Donec consectetur at enim at semper. Nullam id maximus felis, sit amet posuere velit. Proin quam sapien, sodales sed purus nec, bibendum hendrerit enim. Nam urna nunc, tempor eget nisi sed, sagittis viverra nunc. Donec posuere dapibus tortor, in volutpat tellus venenatis nec. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla ut odio est. Nunc eget nibh blandit nibh lacinia tincidunt at ut lectus.
+        </p>
+        <P>
+            Morbi dignissim vulputate tincidunt. Proin et bibendum velit. Maecenas felis enim, dignissim non consectetur sed, suscipit eget massa. Nam dapibus eleifend ornare. Integer porttitor sapien a ante faucibus tincidunt. Proin enim ex, iaculis sit amet gravida sed, placerat vitae dolor. Curabitur imperdiet lacus imperdiet metus rhoncus, quis convallis erat accumsan. Cras suscipit quam ac sapien cursus vulputate. Ut accumsan augue ipsum, in vestibulum nulla lacinia nec. Vivamus maximus ut ex sed porta. Curabitur dignissim vitae lacus et fermentum. Nullam molestie vitae sem ac suscipit. Nam orci quam, feugiat et elit id, fermentum eleifend libero. Quisque non sem maximus, eleifend mauris at, mattis odio.
+        </p>
+        <P>
+            Ut et commodo urna, vitae accumsan ligula. Suspendisse mollis erat sed lorem ornare, eget pretium mi consequat. Fusce volutpat semper augue ac tristique. Mauris id facilisis mauris. Aenean dignissim molestie tortor, eu egestas eros efficitur quis. Nunc in vulputate mi. Cras pharetra vulputate posuere. Morbi in consectetur velit. Duis faucibus nisi ex. Maecenas metus nibh, porta nec turpis vitae, semper porta augue. Curabitur eget ante pulvinar dui ornare fringilla.
+        </p>
+        <P>
+            Fusce varius maximus fringilla. Etiam vel sapien euismod, tincidunt arcu eget, malesuada tortor. Vestibulum pharetra tincidunt est sit amet imperdiet. Nullam sit amet interdum velit. Donec ultricies, nibh et porttitor fermentum, magna felis aliquet velit, ac auctor lectus felis sit amet neque. Etiam faucibus neque nec magna ultricies pharetra. Fusce dignissim, tortor sed malesuada ultrices, metus mauris iaculis dolor, vitae placerat tortor lectus sit amet felis. Nulla vulputate eros non velit ultricies lacinia. Suspendisse vehicula accumsan viverra. Proin ut consectetur velit, quis egestas ligula. Nulla interdum egestas rhoncus. Aliquam erat volutpat. Nulla metus orci, euismod eget tellus non, condimentum dignissim felis.
+        </p>
+        <P>
+            Nullam mauris risus, laoreet et neque nec, sagittis ullamcorper orci. Nam vitae mi eu erat lobortis sollicitudin eget vel est. Donec blandit iaculis sem id faucibus. Donec in lorem nec purus porttitor auctor ac sit amet metus. Donec consequat, quam a tempus efficitur, massa lorem consequat arcu, non tempus lectus ante vitae ex. Donec ornare leo sed consectetur consequat. Pellentesque vitae porttitor eros. Donec sagittis massa libero, eu scelerisque magna efficitur et. Etiam vel convallis massa. Nulla vel lacus nibh. Phasellus ut ex varius, dignissim leo ac, finibus eros. Ut non porta ex.
+        </p>
+        <div id="vanilla-comments"></div>
+
+    </div>
+        
+<script type="text/javascript">
+    /*** Required Settings: Edit BEFORE pasting into your web page ***/
+    var vanilla_forum_url = 'https://dev.vanilla.localhost'; // The full http url & path to your vanilla forum
+    var vanilla_identifier = 'e506547d4f35cb021369dac62390565a'; // Your unique identifier for the content being commented on
+
+    /*** Optional Settings: Ignore if you like ***/
+    // var vanilla_discussion_id = ''; // Attach this page of comments to a specific Vanilla DiscussionID.
+    // var vanilla_category_id = ''; // Create this discussion in a specific Vanilla CategoryID.
+
+    /*** DON'T EDIT BELOW THIS LINE ***/
+    (function() {
+        var vanilla = document.createElement('script');
+        vanilla.type = 'text/javascript';
+        var timestamp = new Date().getTime();
+        vanilla.src = vanilla_forum_url + '/js/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(vanilla);
+    })();
+</script>
+<noscript>
+    Please enable JavaScript to view the
+    <a href="https://vanillaforums.com/?ref_noscript">
+        comments powered by Vanilla.
+    </a>
+</noscript>
+<div class="vanilla-credit">
+    <a class="vanilla-anchor" href="http://vanillaforums.com">
+        Comments by <span class="vanilla-logo">Vanilla</span>
+    </a>
+</div>
+</body>
+</html>
