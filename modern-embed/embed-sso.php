@@ -38,13 +38,17 @@
             Update this file with your user credentials to automatically generate an SSO string.
         </p>
         <?php
+        $USER_ID = 0;
+        $USER_NAME = 'YOUR_USERNAME_HERE';
+        $USER_EMAIL = 'YOUR_EMAIL_ADDRESS_HERE';
+
         $user = [
             // The SSO provider ID you configured
             'client_id' => 'stub_jsconnect',
             // Your users information (in the user table in the vanilla_sso db)
-            'uniqueid' => 2,
-            'name' => 'Maneesh',
-            'email' => 'mchiba@higherlogic.com',
+            'uniqueid' => $USER_ID,
+            'name' => $USER_NAME,
+            'email' => $USER_EMAIL,
             'photourl' => null,
             'roles' => null,
         ];
