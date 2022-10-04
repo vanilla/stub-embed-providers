@@ -42,7 +42,7 @@
             // The SSO provider ID you configured
             'client_id' => 'stub_jsconnect',
             // Your users information (in the user table in the vanilla_sso db)
-            'uniqueid' => 1,
+            'uniqueid' => 2,
             'name' => 'Maneesh',
             'email' => 'mchiba@higherlogic.com',
             'photourl' => null,
