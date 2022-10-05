@@ -8,6 +8,7 @@
         body {
             margin: 0;
         }
+
         header {
             padding: 24px;
         }
@@ -26,11 +27,46 @@
 
 <body>
     <header class="header">
-        <h1>Modern Embed Header</h1>
+        <h1>Modern Embed Header with SSO</h1>
         <p>If the embedded frame does not load properly be sure to set the configuration setting
 
-            <pre><code>$Configuration['Garden']['Embed']['Allow'] = 3;</code></pre>
+        <pre><code>$Configuration['Garden']['Embed']['Allow'] = 3;</code></pre>
         </p>
+        <p>
+            Ensure that you have set up the stub SSO providers and configured your local instance of Vanilla to connect via sso.
+
+            Update this file with your user credentials to automatically generate an SSO string.
+        </p>
+        <?php
+        $USER_ID = 0;
+        $USER_NAME = 'YOUR_USERNAME_HERE';
+        $USER_EMAIL = 'YOUR_EMAIL_ADDRESS_HERE';
+
+        $user = [
+            // The SSO provider ID you configured
+            'client_id' => 'stub_jsconnect',
+            // Your users information (in the user table in the vanilla_sso db)
+            'uniqueid' => $USER_ID,
+            'name' => $USER_NAME,
+            'email' => $USER_EMAIL,
+            'photourl' => null,
+            'roles' => null,
+        ];
+
+        // The SSO provider secret you configured
+        $secret = "1234";
+
+        $string = base64_encode(json_encode($user));
+        $timestamp = time();
+        $hash = hash_hmac('sha1', "$string $timestamp", $secret);
+        $sso_string = "{$string} {$hash} {$timestamp} hmacsha1";
+        ?>
+
+        <code style="line-height: 1.5em; max-width:70vw; display:block; word-break:break-all;">
+            GENERATED SSO STRING <br />
+            ==================== <br /><br />
+            <?php echo $sso_string; ?>
+        </code>
     </header>
     <!-- Vanilla's Embed Javascript. Make sure you replace the domain with your own!!! -->
     <script defer src="https://dev.vanilla.localhost/api/v2/assets/embed-script"></script>
@@ -47,11 +83,8 @@
         NOTES
         - The `height: 100vh` is recommended for the best user experience.
      -->
-    <vanilla-embed
-        remote-url="https://dev.vanilla.localhost"
-        style="height: 100vh"
-        position="sticky"
-    >
+
+    <vanilla-embed remote-url="https://dev.vanilla.localhost" style="height: 100vh" position="sticky" sso-string="<?php echo $sso_string; ?>">
         <noscript>Enable Javascript to view this Community.</noscript>
     </vanilla-embed>
     <footer>Hello external footer</footer>
